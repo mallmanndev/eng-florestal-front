@@ -71,7 +71,8 @@
         "devDependencies": ["**/*.spec.js"]
       }
     ],
-    "prettier/prettier": ["error", 
+    "prettier/prettier": [
+      "error",
       { "singleQuote": true, "doubleQuote": false }
     ],
     "react/jsx-filename-extension": [
@@ -82,7 +83,16 @@
     ],
     "react/react-in-jsx-scope": "off",
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"]
+    "@typescript-eslint/no-use-before-define": ["error"],
+    "react/function-component-definition": [
+      "error",
+      {
+        "namedComponents": "arrow-function",
+        "functionExpression": "arrow-function",
+        "variables": "function-declaration"
+      }
+    ],
+    "react/jsx-props-no-spreading": "off"
   },
   "settings": {
     "import/resolver": {

@@ -1,11 +1,15 @@
-import React from 'react';
+import { NavBar } from './components';
+import Routes from './routes/Routes';
+import GlobalStyle from './styles/GlobalStyle';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      <header className="App-header" />
+      <GlobalStyle />
+      <NavBar />
+      <Routes />
     </div>
   );
-}
+};
 
 export default App;
