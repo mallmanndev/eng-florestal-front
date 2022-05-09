@@ -12,9 +12,7 @@ const TextField = ({ name, ...props }: TextFieldProps) => {
     registerField({
       name: fieldName,
       ref: inputRef,
-      getValue: (ref) => {
-        return ref.current.value;
-      },
+      getValue: (ref) => ref.current.value,
       setValue: (ref, value) => {
         ref.current.value = value;
       },
@@ -24,7 +22,16 @@ const TextField = ({ name, ...props }: TextFieldProps) => {
     });
   }, [fieldName, registerField]);
 
-  return <MUITextField name={strName} {...props} />;
+  return (
+    <MUITextField
+      inputRef={inputRef}
+      name={strName}
+      defaultValue={defaultValue}
+      error={!!error}
+      helperText={error}
+      {...props}
+    />
+  );
 };
 
 export default TextField;

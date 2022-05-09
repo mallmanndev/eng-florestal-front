@@ -1,25 +1,39 @@
-import styled from '@emotion/styled';
-import { UploadFile as UploadFileIcon } from '@mui/icons-material';
 import { Button, Grid, Typography } from '@mui/material';
 import { Form } from '@unform/web';
+import { useEffect, useRef } from 'react';
 
 import { TextField } from '../../../components/unform';
-
-const Input = styled('input')({
-  display: 'none',
-});
+import SelecionaAmostragemButton from '../components/SelecionaAmostragemButton';
 
 type TFormData = {
   title: string;
 };
 
-const EnviarAmostragemTemplate = () => {
-  const handleSubmit = (data: TFormData) => {
-    console.log(data);
-  };
+type TEnviarAmostragemTemplateProps = {
+  formErrors: { [key: string]: string };
+  onAmostragemChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onFormSubmit: (data: any) => void;
+};
+
+const EnviarAmostragemTemplate = ({
+  formErrors,
+  onAmostragemChange,
+  onFormSubmit,
+}: TEnviarAmostragemTemplateProps) => {
+  const formRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (formRef.current) {
+      formRef.current.setErrors(formErrors);
+    }
+  }, [formErrors]);
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form
+      ref={formRef}
+      initialData={{ nome: 'gasdasd' }}
+      onSubmit={onFormSubmit}
+    >
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <Typography variant="h5">Envio de amostragem</Typography>
@@ -49,26 +63,13 @@ const EnviarAmostragemTemplate = () => {
         </Grid>
 
         <Grid item xs={12}>
-          <label htmlFor="contained-button-file">
-            <Input
-              accept="image/*"
-              id="contained-button-file"
-              multiple
-              type="file"
-            />
-            <Button
-              variant="contained"
-              component="span"
-              startIcon={<UploadFileIcon />}
-              color="secondary"
-            >
-              Carregar amostragem
-            </Button>
-          </label>
+          <SelecionaAmostragemButton onChange={onAmostragemChange} />
         </Grid>
 
         <Grid item xs={12}>
-          <Button variant="contained">Enviar amostragem</Button>
+          <Button type="submit" variant="contained">
+            Enviar amostragem
+          </Button>
         </Grid>
       </Grid>
     </Form>
