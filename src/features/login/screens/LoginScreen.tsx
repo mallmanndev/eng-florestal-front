@@ -1,5 +1,11 @@
+import { LoginTemplate } from '../templates';
+
 const LoginScreen = () => {
-  return <div>Testando</div>;
+  const onSave = (values: any) => {
+    console.log(values);
+  };
+
+  return <LoginTemplate onSave={onSave} />;
 };
 
 export default LoginScreen;
