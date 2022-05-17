@@ -1,9 +1,13 @@
 import { Button, Grid, Typography } from '@mui/material';
 import { Form } from '@unform/web';
-import { useEffect, useRef } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 
 import { TextField } from '../../../components/unform';
+import Select from '../../../components/unform/Select';
 import SelecionaAmostragemButton from '../components/SelecionaAmostragemButton';
+import { TAmostragemTab } from '../types/tabs';
+import FormBase from './forms/FormBase';
+import AmostragemSimplesForm from './forms/Simples';
 
 type TFormData = {
   title: string;
@@ -11,16 +15,19 @@ type TFormData = {
 
 type TEnviarAmostragemTemplateProps = {
   formErrors: { [key: string]: string };
+  amostragens: TAmostragemTab[];
   onAmostragemChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFormSubmit: (data: any) => void;
 };
 
 const EnviarAmostragemTemplate = ({
   formErrors,
+  amostragens,
   onAmostragemChange,
   onFormSubmit,
 }: TEnviarAmostragemTemplateProps) => {
   const formRef = useRef<any>(null);
+  const [amostragem, setAmostragem] = useState<string>('simples');
 
   useEffect(() => {
     if (formRef.current) {
@@ -28,51 +35,32 @@ const EnviarAmostragemTemplate = ({
     }
   }, [formErrors]);
 
+  const handleAmostragemChange = (value: string) => {
+    setAmostragem(value);
+  };
+
+  const forms: { [key: string]: ReactNode } = {
+    simples: <AmostragemSimplesForm />,
+  };
+
   return (
-    <Form
-      ref={formRef}
-      initialData={{ nome: 'gasdasd' }}
-      onSubmit={onFormSubmit}
-    >
-      <Grid container spacing={2}>
-        <Grid item xs={12}>
-          <Typography variant="h5">Envio de amostragem</Typography>
-        </Grid>
-
-        <Grid item xs={12}>
-          <TextField name="nome" label="Nome" variant="outlined" fullWidth />
-        </Grid>
-
-        <Grid item xs={12}>
-          <TextField
-            name="responsavel"
-            label="Responsável"
-            variant="outlined"
-            fullWidth
-          />
-        </Grid>
-
-        <Grid item xs={12}>
-          <TextField
-            name="descricao"
-            label="Descrição"
-            variant="outlined"
-            fullWidth
-            multiline
-          />
-        </Grid>
-
-        <Grid item xs={12}>
-          <SelecionaAmostragemButton onChange={onAmostragemChange} />
-        </Grid>
-
-        <Grid item xs={12}>
-          <Button type="submit" variant="contained">
-            Enviar amostragem
-          </Button>
-        </Grid>
+    <Grid container spacing={2}>
+      <Grid item xs={12}>
+        <Typography variant="h5">Envio de amostragem</Typography>
       </Grid>
-    </Form>
+
+      <Grid item xs={12}>
+        <FormBase
+          amostragens={amostragens}
+          onSubmit={(data) => {
+            console.log(data);
+          }}
+          onAmostragemChange={handleAmostragemChange}
+        >
+          {forms[amostragem]}
+        </FormBase>
+      </Grid>
+    </Grid>
   );
 };
 

@@ -4,12 +4,13 @@ import { useEnviarAmostragemScreen } from '../hooks';
 import { EnviarAmostragemTemplate } from '../templates';
 
 const EnviarAmostragemScreen = () => {
-  const { formErrors, onAmostragemChange, onFormSubmit } =
+  const { formErrors, amostragens, onAmostragemChange, onFormSubmit } =
     useEnviarAmostragemScreen();
 
   return (
     <Container maxWidth="xl">
       <EnviarAmostragemTemplate
+        amostragens={amostragens}
         formErrors={formErrors}
         onAmostragemChange={onAmostragemChange}
         onFormSubmit={onFormSubmit}

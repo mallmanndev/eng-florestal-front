@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import * as Yup from 'yup';
+import { TAmostragemTab } from '../types/tabs';
 
 type TUseEnviarAmostragemScreen = {
   formErrors: { [key: string]: string };
+  amostragens: TAmostragemTab[];
   onAmostragemChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFormSubmit: (data: any) => void;
 };
@@ -45,8 +47,22 @@ const useEnviarAmostragemScreen = (): TUseEnviarAmostragemScreen => {
     }
   };
 
+  const amostragens: TAmostragemTab[] = [
+    { label: 'Simples' },
+    { label: 'Estratificada' },
+    { label: 'Sistemática' },
+    { label: 'Dois Estágios' },
+    { label: 'Conglomerados' },
+    { label: 'Sistemática com Multiplos Inicios Aleatórios' },
+    { label: 'Independente' },
+    { label: 'Dupla' },
+    { label: 'Total' },
+    { label: 'Parcial' },
+  ];
+
   return {
     formErrors,
+    amostragens,
     onAmostragemChange,
     onFormSubmit,
   };
