@@ -53,7 +53,7 @@ const useEnviarAmostragemScreen = (): TUseEnviarAmostragemScreen => {
     { label: 'Sistemática' },
     { label: 'Dois Estágios' },
     { label: 'Conglomerados' },
-    { label: 'Sistemática com Multiplos Inicios Aleatórios' },
+    { label: 'Sistemática com Múltiplos Inícios Aleatórios' },
     { label: 'Independente' },
     { label: 'Dupla' },
     { label: 'Total' },

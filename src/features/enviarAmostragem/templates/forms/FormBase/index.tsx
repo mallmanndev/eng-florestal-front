@@ -72,7 +72,7 @@ const FormBase = ({
             name="amostragem"
             options={amostragens.map((item) => ({
               label: item.label,
-              value: item.label.toLowerCase(),
+              value: item.label.toLowerCase().split(" ").join(""),
               disabled: item.disabled,
             }))}
             onChange={handleAmostragemChange}
