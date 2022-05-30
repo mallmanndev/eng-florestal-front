@@ -8,6 +8,7 @@ import SelecionaAmostragemButton from '../components/SelecionaAmostragemButton';
 import { TAmostragemTab } from '../types/tabs';
 import FormBase from './forms/FormBase';
 import AmostragemSimplesForm from './forms/Simples';
+import AmostragemSistematicaForm from './forms/Sistematica';
 
 type TFormData = {
   title: string;
@@ -27,7 +28,7 @@ const EnviarAmostragemTemplate = ({
   onFormSubmit,
 }: TEnviarAmostragemTemplateProps) => {
   const formRef = useRef<any>(null);
-  const [amostragem, setAmostragem] = useState<string>('simples');
+  const [amostragem, setAmostragem] = useState<string>('sistematica');
 
   useEffect(() => {
     if (formRef.current) {
@@ -40,7 +41,8 @@ const EnviarAmostragemTemplate = ({
   };
 
   const forms: { [key: string]: ReactNode } = {
-    simples: <AmostragemSimplesForm />,
+    // simples: <AmostragemSimplesForm />,
+    sistematica: <AmostragemSistematicaForm />,
   };
 
   return (
