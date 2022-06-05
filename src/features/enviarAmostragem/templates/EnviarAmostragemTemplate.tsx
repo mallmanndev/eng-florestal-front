@@ -31,7 +31,7 @@ const EnviarAmostragemTemplate = ({
   onFormSubmit,
 }: TEnviarAmostragemTemplateProps) => {
   const formRef = useRef<any>(null);
-  const [amostragem, setAmostragem] = useState<string>('simples');
+  const [amostragem, setAmostragem] = useState<string>('');
 
   useEffect(() => {
     if (formRef.current) {
@@ -53,7 +53,7 @@ const EnviarAmostragemTemplate = ({
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h5">Envio de amostragem</Typography>
+        <Typography variant="h5">iFlorestal</Typography>
       </Grid>
 
       <Grid item xs={12}>

@@ -87,7 +87,7 @@ const FormBase = ({
 
         <Grid item xs={12}>
           <Button type="submit" variant="contained">
-            Enviar amostragem
+            Calcular Amostragem
           </Button>
         </Grid>
       </Grid>
