@@ -14,6 +14,7 @@ import AmostragemIndependenteForm from './forms/Independente';
 import AmostragemSistematicaComMultiplosIniciosAleatoriosForm from './forms/SistematicaComMultiplosIniciosAleatorios';
 import AmostragemSistematica from './forms/Sistematica'
 import AmostragemConglomeradosForm from './forms/Conglomerados';
+import AmostragemDoisEstagiosForm from './forms/DoisEstagios';
 
 type TFormData = {
   title: string;
@@ -52,6 +53,7 @@ const EnviarAmostragemTemplate = ({
     sistemáticacommúltiplosiníciosaleatórios: <AmostragemSistematicaComMultiplosIniciosAleatoriosForm />,
     sistemática: <AmostragemSistematica />,
     conglomerados: <AmostragemConglomeradosForm />,
+    doisestágios: <AmostragemDoisEstagiosForm />,
   };
 
   return (
