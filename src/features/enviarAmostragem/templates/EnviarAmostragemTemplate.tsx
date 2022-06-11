@@ -59,7 +59,7 @@ const EnviarAmostragemTemplate = ({
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h5">iFlorestal</Typography>
+        <Typography variant="h5">Arbor: Sistema de Cálculo para Inventário Florestal</Typography>
       </Grid>
 
       <Grid item xs={12}>
