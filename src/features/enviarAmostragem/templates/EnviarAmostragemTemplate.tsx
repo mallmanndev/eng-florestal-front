@@ -6,7 +6,6 @@ import { TextField } from '../../../components/unform';
 import Select from '../../../components/unform/Select';
 import SelecionaAmostragemButton from '../components/SelecionaAmostragemButton';
 import { TAmostragemTab } from '../types/tabs';
-//import { AmostragemEstratificadaForm } from './forms';
 import FormBase from './forms/FormBase';
 import AmostragemSimplesForm from './forms/Simples';
 import AmostragemEstratificadaForm from './forms/Estratificada';
