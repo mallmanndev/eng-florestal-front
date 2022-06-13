@@ -6,13 +6,12 @@ import { TextField } from '../../../components/unform';
 import Select from '../../../components/unform/Select';
 import SelecionaAmostragemButton from '../components/SelecionaAmostragemButton';
 import { TAmostragemTab } from '../types/tabs';
-//import { AmostragemEstratificadaForm } from './forms';
 import FormBase from './forms/FormBase';
 import AmostragemSimplesForm from './forms/Simples';
 import AmostragemEstratificadaForm from './forms/Estratificada';
 import AmostragemIndependenteForm from './forms/Independente';
 import AmostragemSistematicaComMultiplosIniciosAleatoriosForm from './forms/SistematicaComMultiplosIniciosAleatorios';
-import AmostragemSistematica from './forms/Sistematica'
+import AmostragemSistematica from './forms/Sistematica';
 import AmostragemConglomeradosForm from './forms/Conglomerados';
 import AmostragemDoisEstagiosForm from './forms/DoisEstagios';
 
@@ -50,7 +49,9 @@ const EnviarAmostragemTemplate = ({
     simples: <AmostragemSimplesForm />,
     estratificada: <AmostragemEstratificadaForm />,
     independente: <AmostragemIndependenteForm />,
-    sistemáticacommúltiplosiníciosaleatórios: <AmostragemSistematicaComMultiplosIniciosAleatoriosForm />,
+    sistemáticacommúltiplosiníciosaleatórios: (
+      <AmostragemSistematicaComMultiplosIniciosAleatoriosForm />
+    ),
     sistemática: <AmostragemSistematica />,
     conglomerados: <AmostragemConglomeradosForm />,
     doisestágios: <AmostragemDoisEstagiosForm />,
@@ -59,7 +60,9 @@ const EnviarAmostragemTemplate = ({
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h5">Arbor: Sistema de Cálculo para Inventário Florestal</Typography>
+        <Typography variant="h5">
+          Arbor: Sistema de Cálculo para Inventário Florestal
+        </Typography>
       </Grid>
 
       <Grid item xs={12}>
