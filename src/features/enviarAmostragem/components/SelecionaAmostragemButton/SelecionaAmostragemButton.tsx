@@ -39,7 +39,7 @@ const SelecionaAmostragemButton = ({
         startIcon={<UploadFileIcon />}
         color="secondary"
       >
-        Carregar amostragem
+        Carregar Dados(.cvs)
       </Button>
 
       {filename && <span>{filename}</span>}

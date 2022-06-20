@@ -12,7 +12,7 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import { useState, MouseEvent } from 'react';
 
-const pages = ['Enviar amostragem', 'Amostragens'];
+const pages = ['Calcular amostragem', 'Amostragens'];
 const settings = ['Perfil', 'Sair'];
 
 const NavBar = () => {

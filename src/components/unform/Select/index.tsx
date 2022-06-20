@@ -48,12 +48,14 @@ const Select = ({ name, label, options, onChange }: TSelectProps) => {
           inputRef={selectRef}
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          label="Age"
+          label={label}
           defaultValue={defaultValue}
           error={!!error}
           onChange={onChange}
         >
-          <MenuItem>Selecione...</MenuItem>
+          <MenuItem value="">
+            <em>Nenhum</em>
+          </MenuItem>
           {options.map((option) => (
             <MenuItem
               key={option.value}

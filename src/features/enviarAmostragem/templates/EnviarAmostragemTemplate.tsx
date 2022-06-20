@@ -8,6 +8,16 @@ import SelecionaAmostragemButton from '../components/SelecionaAmostragemButton';
 import { TAmostragemTab } from '../types/tabs';
 import FormBase from './forms/FormBase';
 import AmostragemSimplesForm from './forms/Simples';
+import AmostragemEstratificadaForm from './forms/Estratificada';
+import AmostragemIndependenteForm from './forms/Independente';
+import AmostragemSistematicaComMultiplosIniciosAleatoriosForm from './forms/SistematicaComMultiplosIniciosAleatorios';
+import AmostragemDuplaForm from './forms/Dupla';
+import AmostragemParcialForm from './forms/Parcial';
+import AmostragemTotalForm from './forms/Total';
+
+import AmostragemSistematica from './forms/Sistematica';
+import AmostragemConglomeradosForm from './forms/Conglomerados';
+import AmostragemDoisEstagiosForm from './forms/DoisEstagios';
 
 type TFormData = {
   title: string;
@@ -27,7 +37,7 @@ const EnviarAmostragemTemplate = ({
   onFormSubmit,
 }: TEnviarAmostragemTemplateProps) => {
   const formRef = useRef<any>(null);
-  const [amostragem, setAmostragem] = useState<string>('simples');
+  const [amostragem, setAmostragem] = useState<string>('');
 
   useEffect(() => {
     if (formRef.current) {
@@ -41,12 +51,25 @@ const EnviarAmostragemTemplate = ({
 
   const forms: { [key: string]: ReactNode } = {
     simples: <AmostragemSimplesForm />,
+    estratificada: <AmostragemEstratificadaForm />,
+    independente: <AmostragemIndependenteForm />,
+    sistemáticacommúltiplosiníciosaleatórios: <AmostragemSistematicaComMultiplosIniciosAleatoriosForm />,
+    dupla: <AmostragemDuplaForm />,
+    parcial: <AmostragemParcialForm />,
+    total: <AmostragemTotalForm />,
+    sistemática: <AmostragemSistematica />,
+    conglomerados: <AmostragemConglomeradosForm />,
+    doisestágios: <AmostragemDoisEstagiosForm />,
+    
+ 
   };
 
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
-        <Typography variant="h5">Envio de amostragem</Typography>
+        <Typography variant="h5">
+          Arbor: Sistema de Cálculo para Inventário Florestal
+        </Typography>
       </Grid>
 
       <Grid item xs={12}>
