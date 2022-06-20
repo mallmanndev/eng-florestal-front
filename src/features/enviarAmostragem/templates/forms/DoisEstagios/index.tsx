@@ -2,7 +2,7 @@ import Grid from '@mui/material/Grid';
 
 import { TextField } from '../../../../../components/unform';
 
-const AmostragemEstratificadaForm = () => {
+const AmostragemDoisEstagiosForm = () => {
   return (
     <>
       <Grid item xs={12}>
@@ -18,8 +18,19 @@ const AmostragemEstratificadaForm = () => {
 
       <Grid item xs={12}>
         <TextField
+          name="nro_unid_sec_prim"
+          label="Número Potencial de Unidades de Secundárias por Primárias"
+          variant="outlined"
+          fullWidth
+          type="number"
+          inputProps={{ min: 0 }}
+        />
+      </Grid>
+
+      <Grid item xs={12}>
+        <TextField
           name="nivel_significancia"
-          label="Nível de significância"
+          label="Nível de Significância"
           variant="outlined"
           fullWidth
           type="number"
@@ -30,7 +41,7 @@ const AmostragemEstratificadaForm = () => {
       <Grid item xs={12}>
         <TextField
           name="erro_requerido"
-          label="Erro da amostragem requerido"
+          label="Erro requerido"
           variant="outlined"
           fullWidth
           type="number"
@@ -48,40 +59,7 @@ const AmostragemEstratificadaForm = () => {
           inputProps={{ min: 0 }}
         />
       </Grid>
-
-      <Grid item xs={12}>
-        <TextField
-          name="potencial_estrato1"
-          label="Número pontencial de unidades no estrato I"
-          variant="outlined"
-          fullWidth
-          type="number"
-          inputProps={{ min: 0 }}
-        />
-      </Grid>
-
-      <Grid item xs={12}>
-        <TextField
-          name="potencial_estrato2"
-          label="Número pontencial de unidades no estrato II"
-          variant="outlined"
-          fullWidth
-          type="number"
-          inputProps={{ min: 0 }}
-        />
-      </Grid>
-
-      <Grid item xs={12}>
-        <TextField
-          name="potencial_estrato3"
-          label="Número pontencial de unidades no estrato III"
-          variant="outlined"
-          fullWidth
-          type="number"
-          inputProps={{ min: 0 }}
-        />
-      </Grid>
     </>
   );
 };
-export default AmostragemEstratificadaForm;
+export default AmostragemDoisEstagiosForm;

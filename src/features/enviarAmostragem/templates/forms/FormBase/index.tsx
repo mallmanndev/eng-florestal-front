@@ -72,7 +72,7 @@ const FormBase = ({
             name="amostragem"
             options={amostragens.map((item) => ({
               label: item.label,
-              value: item.label.toLowerCase().split(" ").join(""),
+              value: item.label.toLowerCase().split(' ').join(''),
               disabled: item.disabled,
             }))}
             onChange={handleAmostragemChange}
@@ -87,7 +87,7 @@ const FormBase = ({
 
         <Grid item xs={12}>
           <Button type="submit" variant="contained">
-            Enviar amostragem
+            Calcular Amostragem
           </Button>
         </Grid>
       </Grid>
