@@ -3,11 +3,15 @@ import Button from '@mui/material/Button';
 import Grid from '@mui/material/Grid';
 import { Form } from '@unform/web';
 import { ReactNode, useEffect, useRef } from 'react';
-
+import Tooltip from '@mui/material/Tooltip';
+import HelpIcon from '@mui/icons-material/Help';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
 import { TextField } from '../../../../../components/unform';
 import Select from '../../../../../components/unform/Select';
 import SelecionaAmostragemButton from '../../../components/SelecionaAmostragemButton';
 import { TAmostragemTab } from '../../../types/tabs';
+import Zoom from '@mui/material/Zoom';
 
 type TFormBase = {
   amostragens: TAmostragemTab[];
@@ -43,9 +47,20 @@ const FormBase = ({
   return (
     <Form ref={formRef} onSubmit={onSubmit}>
       <Grid container spacing={2}>
+
         <Grid item xs={12}>
-          <TextField name="nome" label="Nome" variant="outlined" fullWidth />
+          <TextField name="nomeFazenda" label="Nome da Fazenda" variant="outlined" fullWidth 
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="end">
+                <Tooltip TransitionComponent={Zoom} title="Informação">
+                  <HelpIcon />
+                  </Tooltip>
+              </InputAdornment>
+            ),
+          }}/>
         </Grid>
+
 
         <Grid item xs={12}>
           <TextField
@@ -53,7 +68,17 @@ const FormBase = ({
             label="Responsável"
             variant="outlined"
             fullWidth
-          />
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Tooltip TransitionComponent={Zoom} title="Informação">
+                  <HelpIcon />
+                  </Tooltip>
+                </InputAdornment>
+              ),
+            }}/>
+          
+          
         </Grid>
 
         <Grid item xs={12}>
@@ -63,7 +88,16 @@ const FormBase = ({
             variant="outlined"
             fullWidth
             multiline
-          />
+            InputProps={{
+              endAdornment: (
+                <InputAdornment position="end">
+                  <Tooltip TransitionComponent={Zoom} title="Informação">
+                  <HelpIcon />
+                  </Tooltip>
+
+                </InputAdornment>
+              ),
+            }}/>
         </Grid>
 
         <Grid item xs={12}>
