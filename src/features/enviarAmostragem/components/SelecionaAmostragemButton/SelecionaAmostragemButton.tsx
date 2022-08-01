@@ -37,7 +37,7 @@ const SelecionaAmostragemButton = ({
         variant="contained"
         component="span"
         startIcon={<UploadFileIcon />}
-        color="secondary"
+        style={{backgroundColor: '#0AD26E' }}
       >
         Carregar Dados(.cvs)
       </Button>
