@@ -19,7 +19,7 @@ const AmostragemSistematicaComMultiplosIniciosAleatoriosForm = () => {
       <Grid item xs={12}>
         <TextField
           name="interface"
-          label="Inferface"
+          label="Interface"
           variant="outlined"
           fullWidth
           type="number"
@@ -40,8 +40,8 @@ const AmostragemSistematicaComMultiplosIniciosAleatoriosForm = () => {
 
       <Grid item xs={12}>
         <TextField
-          name="erro_amostragem_requirido"
-          label="Erro da amostragem requirido"
+          name="erro_requerido"
+          label="Erro requirido"
           variant="outlined"
           fullWidth
           type="number"

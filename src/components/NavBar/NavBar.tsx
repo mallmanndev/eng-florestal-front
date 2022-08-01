@@ -12,6 +12,9 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import { useState, MouseEvent } from 'react';
 
+/*const styles = {
+  backgroundColor: 'green'
+}*/
 //const pages = ['Calcular amostragem', 'Amostragens'];
 const settings = ['Perfil', 'Sair'];
 
@@ -35,7 +38,7 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" style={{ marginBottom: 24 }}>
+    <AppBar position="static" style={{ marginBottom: 24, backgroundColor: '#49E55C  ' }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

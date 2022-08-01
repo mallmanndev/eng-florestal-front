@@ -5,7 +5,6 @@ import { Form } from '@unform/web';
 import { ReactNode, useEffect, useRef } from 'react';
 import Tooltip from '@mui/material/Tooltip';
 import HelpIcon from '@mui/icons-material/Help';
-import IconButton from '@mui/material/IconButton';
 import InputAdornment from '@mui/material/InputAdornment';
 import { TextField } from '../../../../../components/unform';
 import Select from '../../../../../components/unform/Select';
@@ -53,7 +52,7 @@ const FormBase = ({
           InputProps={{
             endAdornment: (
               <InputAdornment position="end">
-                <Tooltip TransitionComponent={Zoom} title="Informação">
+                <Tooltip TransitionComponent={Zoom} title="Informar o nome do local que indica onde foi realizado o Inventário Florestal. ">
                   <HelpIcon />
                   </Tooltip>
               </InputAdornment>
@@ -71,7 +70,7 @@ const FormBase = ({
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <Tooltip TransitionComponent={Zoom} title="Informação">
+                  <Tooltip TransitionComponent={Zoom} title="Nome da pessoa responsável pela realização do Inventário Florestal. ">
                   <HelpIcon />
                   </Tooltip>
                 </InputAdornment>
@@ -91,7 +90,7 @@ const FormBase = ({
             InputProps={{
               endAdornment: (
                 <InputAdornment position="end">
-                  <Tooltip TransitionComponent={Zoom} title="Informação">
+                  <Tooltip TransitionComponent={Zoom} title="Informações adicionais do Inventário Florestal (Data, Coordenada geográfica, idade do plantio, etc). ">
                   <HelpIcon />
                   </Tooltip>
 
@@ -100,15 +99,20 @@ const FormBase = ({
             }}/>
         </Grid>
 
-        <Grid item xs={12}>
-          <Select
+        <Grid item xs={12}  >
+          
+          <Select 
+            
             label="Amostragem"
             name="amostragem"
+            
             options={amostragens.map((item) => ({
               label: item.label,
               value: item.label.toLowerCase().split(' ').join(''),
               disabled: item.disabled,
             }))}
+            
+            
             onChange={handleAmostragemChange}
           />
         </Grid>
@@ -120,7 +124,7 @@ const FormBase = ({
         </Grid>
 
         <Grid item xs={12}>
-          <Button type="submit" variant="contained">
+          <Button type="submit" variant="contained" style={{backgroundColor: '#0AD26E' }}>
             Calcular Amostragem
           </Button>
         </Grid>
