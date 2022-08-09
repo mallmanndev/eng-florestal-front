@@ -8,7 +8,6 @@ const Routes = () => {
     <BrowserRouter>
       <RDRoutes>
         <Route path="/" element={<EnviarAmostragemScreen />} />
-        <Route path="/login" element={<LoginScreen />} />
       </RDRoutes>
     </BrowserRouter>
   );
