@@ -1,6 +1,6 @@
 import { Container } from '@mui/material';
-import { useEnviarAmostragemScreen } from '../hooks';
 
+import { useEnviarAmostragemScreen } from '../hooks';
 import { EnviarAmostragemTemplate } from '../templates';
 
 const EnviarAmostragemScreen = () => {

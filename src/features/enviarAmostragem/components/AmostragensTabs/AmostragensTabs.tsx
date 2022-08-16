@@ -2,6 +2,7 @@
 import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import { SyntheticEvent, useState } from 'react';
+
 import { TAmostragemTab } from '../../types/tabs';
 
 type TAmostragemTabsProps = {
