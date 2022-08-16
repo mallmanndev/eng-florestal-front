@@ -6,18 +6,17 @@ import { TextField } from '../../../components/unform';
 import Select from '../../../components/unform/Select';
 import SelecionaAmostragemButton from '../components/SelecionaAmostragemButton';
 import { TAmostragemTab } from '../types/tabs';
-import FormBase from './forms/FormBase';
-import AmostragemSimplesForm from './forms/Simples';
-import AmostragemEstratificadaForm from './forms/Estratificada';
-import AmostragemIndependenteForm from './forms/Independente';
-import AmostragemSistematicaComMultiplosIniciosAleatoriosForm from './forms/SistematicaComMultiplosIniciosAleatorios';
-import AmostragemDuplaForm from './forms/Dupla';
-import AmostragemParcialForm from './forms/Parcial';
-import AmostragemTotalForm from './forms/Total';
-
-import AmostragemSistematica from './forms/Sistematica';
 import AmostragemConglomeradosForm from './forms/Conglomerados';
 import AmostragemDoisEstagiosForm from './forms/DoisEstagios';
+import AmostragemDuplaForm from './forms/Dupla';
+import AmostragemEstratificadaForm from './forms/Estratificada';
+import FormBase from './forms/FormBase';
+import AmostragemIndependenteForm from './forms/Independente';
+import AmostragemParcialForm from './forms/Parcial';
+import AmostragemSimplesForm from './forms/Simples';
+import AmostragemSistematica from './forms/Sistematica';
+import AmostragemSistematicaComMultiplosIniciosAleatoriosForm from './forms/SistematicaComMultiplosIniciosAleatorios';
+import AmostragemTotalForm from './forms/Total';
 
 type TFormData = {
   title: string;
@@ -53,15 +52,15 @@ const EnviarAmostragemTemplate = ({
     simples: <AmostragemSimplesForm />,
     estratificada: <AmostragemEstratificadaForm />,
     independente: <AmostragemIndependenteForm />,
-    sistemáticacommúltiplosiníciosaleatórios: <AmostragemSistematicaComMultiplosIniciosAleatoriosForm />,
+    sistemáticacommúltiplosiníciosaleatórios: (
+      <AmostragemSistematicaComMultiplosIniciosAleatoriosForm />
+    ),
     dupla: <AmostragemDuplaForm />,
     parcial: <AmostragemParcialForm />,
     total: <AmostragemTotalForm />,
     sistemática: <AmostragemSistematica />,
     conglomerados: <AmostragemConglomeradosForm />,
     doisestágios: <AmostragemDoisEstagiosForm />,
-    
- 
   };
 
   return (

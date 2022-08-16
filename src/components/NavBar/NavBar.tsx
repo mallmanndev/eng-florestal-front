@@ -1,22 +1,11 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import AppBar from '@mui/material/AppBar';
-import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
 import Toolbar from '@mui/material/Toolbar';
-import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import { useState, MouseEvent } from 'react';
-
-/*const styles = {
-  backgroundColor: 'green'
-}*/
-//const pages = ['Calcular amostragem', 'Amostragens'];
-const settings = ['Perfil', 'Sair'];
 
 const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null);
@@ -38,7 +27,10 @@ const NavBar = () => {
   };
 
   return (
-    <AppBar position="static" style={{ marginBottom: 24, backgroundColor: '#49E55C  ' }}>
+    <AppBar
+      position="static"
+      style={{ marginBottom: 24, backgroundColor: '#49E55C  ' }}
+    >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -61,7 +53,6 @@ const NavBar = () => {
             >
               <MenuIcon />
             </IconButton>
-              
           </Box>
           <Typography
             variant="h6"
@@ -71,11 +62,7 @@ const NavBar = () => {
           >
             Arbor: Sistema de Cálculo para Inventário Florestal
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            
-          </Box>
-
-          
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }} />
         </Toolbar>
       </Container>
     </AppBar>
