@@ -11,7 +11,7 @@ type TUseEnviarAmostragemScreen = {
 };
 
 const schema = Yup.object().shape({
-  nome: Yup.string()
+  nomeFazenda: Yup.string()
     .required('O nome é obrigatório')
     .min(3, 'O nome deve ter no mínimo 3 caracteres')
     .max(50, 'O nome deve ter no máximo 50 caracteres'),

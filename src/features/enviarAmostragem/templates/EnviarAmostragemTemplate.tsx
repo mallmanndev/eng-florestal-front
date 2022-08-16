@@ -1,10 +1,6 @@
-import { Button, Grid, Typography } from '@mui/material';
-import { Form } from '@unform/web';
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { Grid, Typography } from '@mui/material';
+import { ReactNode, useState } from 'react';
 
-import { TextField } from '../../../components/unform';
-import Select from '../../../components/unform/Select';
-import SelecionaAmostragemButton from '../components/SelecionaAmostragemButton';
 import { TAmostragemTab } from '../types/tabs';
 import AmostragemConglomeradosForm from './forms/Conglomerados';
 import AmostragemDoisEstagiosForm from './forms/DoisEstagios';
@@ -17,10 +13,6 @@ import AmostragemSimplesForm from './forms/Simples';
 import AmostragemSistematica from './forms/Sistematica';
 import AmostragemSistematicaComMultiplosIniciosAleatoriosForm from './forms/SistematicaComMultiplosIniciosAleatorios';
 import AmostragemTotalForm from './forms/Total';
-
-type TFormData = {
-  title: string;
-};
 
 type TEnviarAmostragemTemplateProps = {
   formErrors: { [key: string]: string };
@@ -35,14 +27,7 @@ const EnviarAmostragemTemplate = ({
   onAmostragemChange,
   onFormSubmit,
 }: TEnviarAmostragemTemplateProps) => {
-  const formRef = useRef<any>(null);
   const [amostragem, setAmostragem] = useState<string>('');
-
-  useEffect(() => {
-    if (formRef.current) {
-      formRef.current.setErrors(formErrors);
-    }
-  }, [formErrors]);
 
   const handleAmostragemChange = (value: string) => {
     setAmostragem(value);
@@ -74,10 +59,9 @@ const EnviarAmostragemTemplate = ({
       <Grid item xs={12}>
         <FormBase
           amostragens={amostragens}
-          onSubmit={(data) => {
-            console.log(data);
-          }}
+          onSubmit={onFormSubmit}
           onAmostragemChange={handleAmostragemChange}
+          formErrors={formErrors}
         >
           {forms[amostragem]}
         </FormBase>
